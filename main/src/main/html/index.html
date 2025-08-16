@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My GitHub Pages Website</title>
+  <meta name="description" content="A clean, responsive one-page website template you can publish on GitHub Pages in minutes." />
+
+  <!-- Social/SEO -->
+  <meta property="og:title" content="My GitHub Pages Website" />
+  <meta property="og:description" content="A clean, responsive one-page website template you can publish on GitHub Pages in minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/9919?s=200&v=4" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' font-size='52' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3E%3C![CDATA[%F0%9F%90%8D]]%3E%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #0f172a; /* slate-900 */
+      --text: #e5e7eb; /* gray-200 */
+      --muted: #94a3b8; /* slate-400 */
+      --brand: #0ea5e9; /* sky-500 */
+      --brand-2: #22d3ee; /* cyan-400 */
+      --ring: 0 0 0 3px rgba(14,165,233,.35);
+      --radius: 1.25rem;
+      --shadow: 0 10px 30px rgba(2,6,23,.45);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --muted: #64748b; }
+      header.nav { background: rgba(255,255,255,.7); backdrop-filter: blur(10px); }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font: 400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%), radial-gradient(800px 400px at -10% 10%, rgba(14,165,233,.2), transparent 60%), var(--bg); }
+
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* Top nav */
+    header.nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(148,163,184,.15); background: rgba(15,23,42,.65); backdrop-filter: blur(10px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .2px; }
+    .brand .logo { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow); }
+    .brand span { font-size: 1rem; }
+
+    nav a { padding: .5rem .8rem; border-radius: .7rem; color: var(--text); }
+    nav a:hover { background: rgba(148,163,184,.12); text-decoration: none; }
+
+    /* Hero section */
+    .hero { padding: 8rem 0 6rem; text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .6rem; border: 1px solid rgba(148,163,184,.25); border-radius: 999px; color: var(--muted); font-size: .9rem; }
+    .title { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: 1rem 0 .6rem; font-weight: 800; letter-spacing: -.02em; }
+    .subtitle { color: var(--muted); font-size: clamp(1rem, 2.6vw, 1.25rem); }
+
+    .cta { margin-top: 1.5rem; display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1rem; border-radius: 999px; border: 1px solid rgba(148,163,184,.25); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color: var(--text); text-decoration: none; font-weight: 600; box-shadow: var(--shadow); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: white; }
+
+    /* Cards grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+    .card { grid-column: span 12; background: var(--surface); border: 1px solid rgba(148,163,184,.15); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 .6rem; font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    @media (min-width: 700px) {
+      .card.sm-6 { grid-column: span 6; }
+      .card.sm-4 { grid-column: span 4; }
+    }
+
+    section { padding: 4rem 0; }
+    section h2 { font-size: 1.6rem; margin: 0 0 1rem; }
+
+    /* Footer */
+    footer { padding: 2rem 0 3rem; color: var(--muted); border-top: 1px solid rgba(148,163,184,.15); }
+    .foot { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; justify-content: space-between; }
+
+    /* Utility */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#" aria-label="Homepage">
+        <div class="logo" aria-hidden="true">⚡</div>
+        <span>MySite</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <span class="badge">🚀 Ready to ship on GitHub Pages</span>
+        <h1 class="title">A slick, responsive one‑pager</h1>
+        <p class="subtitle">Drop this file into a repo, enable GitHub Pages, and your site is live. Edit the text below to make it yours.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn" href="https://github.com/new" target="_blank" rel="noreferrer">Create a Repo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid">
+        <div class="card sm-6">
+          <h3>About Me</h3>
+          <p>Write a short, friendly intro here. What do you build? What are you excited about? Keep it concise and human.</p>
+        </div>
+        <div class="card sm-6">
+          <h3>Tech I use</h3>
+          <p>Java • Spring Boot • TypeScript • Angular • HTML • CSS • SQL • (add yours)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card sm-4">
+            <h3>Cool App</h3>
+            <p>A short description of your app. <a href="#">View</a></p>
+          </article>
+          <article class="card sm-4">
+            <h3>Open Source</h3>
+            <p>Link to a useful repo or contribution. <a href="#">Repo</a></p>
+          </article>
+          <article class="card sm-4">
+            <h3>Portfolio Piece</h3>
+            <p>Showcase a case study or demo. <a href="#">Live</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="card">
+          <p>Say hello via <a href="mailto:you@example.com">email</a> or drop a message below.</p>
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required style="width:100%;padding:.9rem 1rem;margin:.3rem 0;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:transparent;color:inherit"/>
+
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required style="width:100%;padding:.9rem 1rem;margin:.3rem 0;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:transparent;color:inherit"/>
+
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message…" rows="5" required style="width:100%;padding:.9rem 1rem;margin:.3rem 0;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:transparent;color:inherit"></textarea>
+
+            <button class="btn primary" type="submit">Send</button>
+            <span id="formStatus" aria-live="polite" style="margin-left:.6rem;color:var(--muted)"></span>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <small>© <span id="year"></span> Your Name. All rights reserved.</small>
+      <small>Built with ♥ and GitHub Pages.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Minimal form handler (no backend). Replace with your Formspree/EmailJS action if needed.
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Thanks! This demo form does not send emails.';
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
